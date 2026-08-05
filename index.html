@@ -432,24 +432,85 @@ word-break:break-word;
 }
 
 /* ============ MAP ============ */
-.map-section{background:var(--text); padding-top:0; padding-bottom:150px;}
+/* ============ MAP ============ */
+
+.map-section{
+    background:var(--text);
+    padding-top:80px;
+    padding-bottom:150px;
+}
+
 .map-card{
-  position:relative; background:rgba(255,253,248,.03); border:1px solid rgba(255,253,248,.1); border-radius:30px;
-  padding:20px; overflow:hidden;
+    position:relative;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(192,132,252,.15);
+    border-radius:34px;
+    padding:40px;
+    overflow:hidden;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    box-shadow:0 25px 60px rgba(0,0,0,.22);
 }
-.map-card svg{width:100%; height:auto; display:block;}
-.map-land{fill:rgba(255,253,248,.07); stroke:rgba(255,253,248,.12); stroke-width:.5;}
-.map-label{
-  position:absolute; left:50%; bottom:36px; transform:translateX(-50%); text-align:center;
-  font-family:'Space Grotesk',sans-serif; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,253,248,.7);
-  display:flex; align-items:center; gap:10px; background:rgba(17,24,39,.5); backdrop-filter:blur(8px);
-  padding:10px 20px; border-radius:100px; border:1px solid rgba(255,253,248,.1);
+.map-card svg{
+    width:100%;
+    height:auto;
+    display:block;
 }
-.pulse-dot{position:relative; width:8px; height:8px; border-radius:50%; background:var(--gold);}
-.pulse-dot::after{
-  content:''; position:absolute; inset:-6px; border-radius:50%; border:1.5px solid var(--gold); animation:pulse 2.2s ease-out infinite;
+
+.bangalore-marker {
+    position: absolute;
+    left: 69%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
 }
-@keyframes pulse{0%{transform:scale(.4); opacity:1;} 100%{transform:scale(2.6); opacity:0;}}
+.pin{
+    width:16px;
+    height:16px;
+    background:#FBBF24;
+    border:3px solid white;
+    border-radius:50%;
+    box-shadow:
+        0 0 18px rgba(251,191,36,.7),
+        0 0 36px rgba(251,191,36,.35);
+    position:relative;
+    z-index:2;
+}
+.pulse{
+    position:absolute;
+    width:14px;
+    height:14px;
+    border:2px solid #FBBF24;
+    border-radius:50%;
+    animation:mapPulse 2.5s infinite;
+}
+
+.city-label{
+    margin-top:18px;
+    padding:6px 16px;
+    border-radius:999px;
+    background:rgba(17,24,39,.88);
+    color:white;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+@keyframes mapPulse{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(5);
+        opacity:0;
+    }
+}
 
 /* ============ FOOTER ============ */
 footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); padding:40px 0;}
@@ -738,72 +799,104 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
   <div class="float-el" style="width:320px;height:320px;background:radial-gradient(circle,rgba(37,99,235,.18),transparent 70%); top:-10%; left:-6%;"></div>
   <div class="float-el" style="width:260px;height:260px;background:radial-gradient(circle,rgba(251,191,36,.14),transparent 70%); bottom:-8%; right:-4%;"></div>
   <div class="wrap">
+    <div class="contact-head reveal">
+
     <div class="eyebrow">Let's Connect</div>
+</div>
+<div class="contact-links reveal reveal-delay-1">
 
-      <h2>
-      Let's Build Something<br>
-      Intelligent Together.
-      </h2>
-      <p>
-        I'm passionate about building enterprise AI systems through Machine Learning,
-        Computer Vision, Intelligent Automation and scalable backend engineering.
-        Always open to exciting opportunities, collaborations and meaningful conversations.
-      </p>
-    </div>
-    <div class="contact-links reveal reveal-delay-1">
-      <a href="mailto:amali16akshaya@gmail.com" class="contact-link">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></div>
-        <div class="lbl">Email</div><div class="sub">mailto:amali16akshaya@gmail.com</div>
-      </a>
-      <a href="https://github.com/amali-Codes" target="_blank" rel="noopener" class="contact-link">
-    <div class="ic">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24">
-            <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.15c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.71 1.25 3.37.95.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.19-3.11-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.19a10.96 10.96 0 0 1 5.8 0c2.21-1.5 3.18-1.19 3.18-1.19.63 1.59.23 2.77.11 3.06.74.81 1.19 1.85 1.19 3.11 0 4.43-2.69 5.41-5.25 5.7.41.35.77 1.04.77 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
-        </svg>
-    </div>
+    <!-- Email -->
+    <a href="mailto:amali16akshaya@gmail.com" class="contact-link">
+        <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8">
+                <path d="M3 6h18v12H3z"/>
+                <path d="M3 7l9 6 9-6"/>
+            </svg>
+        </div>
 
-    <div class="lbl">GitHub</div>
-    <div class="sub">github.com/amali-Codes</div>
-</a>
-      <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-link">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM7 20.4H3.6V9H7v11.4z"/></svg></div>
-        <div class="lbl">LinkedIn</div><div class="sub">https://www.linkedin.com/in/amali-akshaya1603/</div>
-      </a>
-      <a href="#" class="contact-link">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.6"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></div>
-        <div class="lbl">Resume</div><div class="sub">Download PDF</div>
-      </a>
-    </div>
-  </div>
-</section>
+        <div class="lbl">Email</div>
+        <div class="sub">amali16akshaya@gmail.com</div>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/amali-Codes" target="_blank" rel="noopener" class="contact-link">
+        <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24">
+                <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.5-.3-5.2-1.3-5.2-5.6 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.3-2.7 5.3-5.2 5.6.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
+            </svg>
+        </div>
+
+        <div class="lbl">GitHub</div>
+        <div class="sub">github.com/amali-Codes</div>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/amali-akshaya1603/" target="_blank" rel="noopener" class="contact-link">
+        <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24">
+                <path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM7 20.4H3.6V9H7v11.4z"/>
+            </svg>
+        </div>
+
+        <div class="lbl">LinkedIn</div>
+        <div class="sub">linkedin.com/in/amali-akshaya1603</div>
+    </a>
+
+    <!-- Resume -->
+    <a href="#" class="contact-link">
+        <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8">
+                <path d="M6 2h9l5 5v15H6z"/>
+                <path d="M14 2v6h6"/>
+            </svg>
+        </div>
+
+        <div class="lbl">Resume</div>
+        <div class="sub">Download PDF</div>
+    </a>
+
+</div>
 
 <!-- ============ MAP ============ -->
+<!-- ============ MAP ============ -->
 <section class="map-section">
+
   <div class="wrap">
-    <div class="map-card reveal">
-      <svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg">
-        <!-- stylized dotted world silhouette -->
-        <g class="map-land" fill="none">
-          <path d="M120 150c40-30 90-20 120 0 30 20 70 10 90-10 30-25 70-15 90 5 20-15 60-20 85 0 30-25 80-15 100 10 25-20 60-15 80 5" stroke-width="1.2"/>
-        </g>
-        <g fill="rgba(255,253,248,0.16)">
-          <!-- dot-grid world map suggestion -->
-          <script>void(0)</script>
-        </g>
-        <g id="dotgrid"></g>
-        <!-- Bengaluru marker -->
-        <g transform="translate(630,255)">
-          <circle r="20" fill="#2563EB" opacity="0.12"/>
-          <circle r="4.5" fill="#FBBF24"/>
-          <circle r="4.5" fill="none" stroke="#FBBF24" stroke-width="1.4">
-            <animate attributeName="r" values="4.5;16;4.5" dur="2.6s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.9;0;0.9" dur="2.6s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-      </svg>
-      <div class="map-label"><span class="pulse-dot"></span> Based in Bengaluru, India</div>
+
+    <div class="section-head reveal" style="text-align:center; margin-bottom:50px;">
+
+      <div class="eyebrow">Location</div>
+
+      <h2 style="color:var(--ivory);">
+        Based in Bengaluru, India
+      </h2>
+
+      <p style="color:rgba(255,255,255,.65);">
+        Open to opportunities across India and globally.
+      </p>
+
     </div>
+
+    <div class="map-card reveal">
+      <img src="world.svg"
+     alt="World Map"
+     class="world-map-svg">
+     <div class="bangalore-marker">
+
+    <div class="pulse"></div>
+
+    <div class="pin"></div>
+
+    <div class="city-label">
+        📍 Bengaluru, India
+    </div>
+
+</div>
+
+    </div>
+
   </div>
+
 </section>
 
 <!-- ============ FOOTER ============ -->
