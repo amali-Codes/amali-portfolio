@@ -198,35 +198,181 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:20p
 
 /* ============ EXPERIENCE ============ */
 .timeline{position:relative; margin-top:20px;}
-.timeline::before{content:''; position:absolute; left:19px; top:6px; bottom:6px; width:1.5px; background:linear-gradient(var(--royal),var(--emerald),var(--gold)); opacity:.35;}
+.timeline::before{
+              content:'';
+              position:absolute;
+              left:20px;
+              top:0;
+              bottom:0;
+              width:3px;
+              border-radius:10px;
+
+              background:
+              linear-gradient(
+              180deg,
+              var(--royal),
+              var(--emerald),
+              var(--gold)
+              );
+
+              opacity:.75;
+
+              box-shadow:
+              0 0 15px rgba(37,99,235,.25);
+              }
 .tl-item{position:relative; padding-left:64px; margin-bottom:56px;}
 .tl-item:last-child{margin-bottom:0;}
 .tl-dot{
-  position:absolute; left:8px; top:6px; width:24px; height:24px; border-radius:50%; background:var(--white);
-  border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; z-index:2;
-  transition:transform .4s var(--ease), border-color .4s ease;
-}
-.tl-dot::after{content:''; width:9px; height:9px; border-radius:50%; background:var(--grad-be); transition:transform .4s var(--ease);}
-.tl-item:hover .tl-dot{transform:scale(1.15); border-color:var(--royal);}
-.tl-item:hover .tl-dot::after{transform:scale(1.2);}
+        position:absolute;
+
+        left:7px;
+        top:8px;
+
+        width:28px;
+        height:28px;
+
+        border-radius:50%;
+
+        background:var(--white);
+
+        border:2px solid rgba(37,99,235,.18);
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        z-index:5;
+
+        box-shadow:
+        0 8px 20px rgba(37,99,235,.15);
+
+        transition:
+        all .45s var(--ease);
+        }
+.tl-dot::after{
+
+        content:"";
+
+        width:11px;
+        height:11px;
+
+        border-radius:50%;
+
+        background:linear-gradient(
+        135deg,
+        var(--royal),
+        var(--emerald)
+        );
+
+        transition:all .45s ease;
+
+        }
+.tl-item:hover .tl-dot{
+
+        transform:scale(1.18);
+
+        border-color:var(--royal);
+
+        box-shadow:
+        0 0 25px rgba(37,99,235,.35);
+
+        }
 .tl-card{
-  background:var(--white); border-radius:22px; padding:34px 38px; box-shadow:var(--shadow-card);
-  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
-  border:1px solid transparent;
+
+        background:rgba(255,255,255,.88);
+
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+
+        border-radius:26px;
+
+        padding:38px;
+
+        border:1px solid rgba(37,99,235,.08);
+
+        box-shadow:
+        0 20px 50px rgba(17,24,39,.08);
+
+        transition:
+        all .45s var(--ease);
+
 }
-.tl-item:hover .tl-card{transform:translateY(-6px); box-shadow:var(--shadow-soft); border-color:rgba(37,99,235,.12);}
+.tl-item:hover .tl-card{
+
+        transform:
+        translateY(-10px);
+
+        box-shadow:
+        0 28px 65px rgba(17,24,39,.14);
+
+        border-color:
+        rgba(37,99,235,.25);
+
+        }
 .tl-top{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:6px;}
-.tl-role{font-family:'Fraunces',serif; font-size:22px; font-weight:500;}
-.tl-period{font-family:'Space Grotesk',sans-serif; font-size:12.5px; letter-spacing:.05em; color:var(--text-light); white-space:nowrap;}
-.tl-company{font-family:'Space Grotesk',sans-serif; font-size:14px; color:var(--royal); font-weight:500; margin-bottom:14px;}
-.tl-card ul{margin:0 0 18px 18px; color:var(--text-light); font-size:15px;}
-.tl-card li{margin-bottom:7px;}
-.chips{display:flex; flex-wrap:wrap; gap:8px;}
-.chip{
-  font-family:'Space Grotesk',sans-serif; font-size:11.5px; letter-spacing:.03em; padding:6px 13px; border-radius:100px;
-  background:var(--beige); color:var(--text-light); border:1px solid var(--line); transition:all .3s ease;
+.tl-role{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--charcoal);
+    line-height:1.2;
 }
-.tl-item:hover .chip{background:var(--champagne); color:var(--text); border-color:transparent;}
+.tl-period{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--royal);
+    background:rgba(37,99,235,.08);
+    padding:8px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+}
+.tl-company{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    color:var(--emerald);
+    margin:12px 0 20px;
+}
+.tl-card ul{
+    margin:0 0 26px 22px;
+    color:var(--charcoal-soft);
+    font-size:15.8px;
+    line-height:1.8;
+}
+
+.tl-card li{
+    margin-bottom:12px;
+}
+.chip{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;
+    font-weight:500;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    background:#FAF8F5;
+
+    color:var(--charcoal-soft);
+
+    border:1px solid rgba(17,24,39,.08);
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        transform .35s ease;
+}
+
+.tl-item:hover .chip{
+    background:var(--champagne);
+    color:var(--charcoal);
+    border-color:rgba(251,191,36,.35);
+    transform:translateY(-2px);
+}
 
 /* ============ PROJECTS ============ */
 .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
@@ -672,54 +818,127 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Experience</div>
-      <h2>Where I've built</h2>
+      <h2>Professional Experience</h2>
       <svg class="flourish" viewBox="0 0 150 14"><path d="M2 8 C30 2, 45 14, 70 7 S 120 1, 148 8" stroke="url(#flourGrad)" stroke-width="2.4" fill="none" stroke-linecap="round"/><defs><linearGradient id="flourGrad" x1="0" x2="1"><stop offset="0%" stop-color="#2563EB"/><stop offset="50%" stop-color="#10B981"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient></defs></svg>
-      <p>A track record of shipping AI systems inside product, mobility and enterprise technology teams.</p>
+      <p>Hands-on experience building AI solutions, data-driven applications and enterprise software across startups and global organizations.</p>
     </div>
     <div class="timeline">
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <div class="tl-top"><span class="tl-role">AI Engineer</span><span class="tl-period">2024 — Present</span></div>
-          <div class="tl-company">Audvik Labs</div>
-          <ul>
-            <li>Designed and deployed computer vision pipelines for real-time object detection and OCR-driven document automation.</li>
-            <li>Built and optimized LLM-powered workflows for intelligent process automation across client products.</li>
-            <li>Owned model lifecycle end-to-end — data pipelines, training, evaluation and production deployment.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">FastAPI</span><span class="chip">Prompt Engineering</span><span class="chip">Docker</span>
+          <div class="tl-top">
+          <span class="tl-role">Data Scientist</span>
+          <span class="tl-period">Feb 2026 – Present</span>
+          </div>
+
+          <div class="tl-company">
+              Audvik Labs
+          </div>
+          <ul> 
+                    
+            <li>Developed Computer Vision solutions using <strong>YOLOv8</strong> for enterprise object detection, custom model training, and image annotation workflows.</li>
+
+            <li>Built OCR-based document processing pipelines using <strong>Python</strong>, <strong>OpenCV</strong>, and image preprocessing techniques to automate information extraction from scanned documents.</li>
+
+            <li>Designed and developed AI-powered enterprise applications using <strong>Microsoft Power Apps</strong>, <strong>Power Automate</strong>, and <strong>SharePoint</strong> to streamline business processes.</li>
+
+            <li>Developed and integrated backend APIs using <strong>Python</strong> to support AI model deployment and production-ready enterprise applications.</li>
+
+            <li>Performed data preprocessing, feature engineering, exploratory data analysis (EDA), and model evaluation to improve machine learning model performance.</li>
+
+            <li>Implemented PII masking and document anonymization workflows to securely process sensitive documents before AI model inference.</li>
+
+            <li>Collaborated on Generative AI and Large Language Model (LLM) solutions for intelligent document processing, automation, and knowledge retrieval workflows.</li>
+
+            <li>Built scalable data processing pipelines for structured and unstructured datasets, ensuring data quality, validation, and efficient execution.</li>
+
+            <li>Created interactive dashboards and business reports using <strong>Power BI</strong> to visualize insights, monitor KPIs, and support data-driven decision-making.</li>
+
+            <li>Worked closely with cross-functional teams, stakeholders, and product owners to translate business requirements into scalable AI solutions following Agile methodologies.</li>
+
+            <li>Participated in model testing, debugging, deployment, and continuous enhancement of AI applications deployed for enterprise use.</li>
+
+            <li>Utilized technologies including <strong>Python</strong>, <strong>SQL</strong>, <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Git</strong>, <strong>SharePoint</strong>, <strong>Power Platform</strong>, and REST APIs throughout the complete AI development lifecycle.</li>
+
+            </ul>
+       <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">YOLOv8</span>
+                <span class="chip">OpenCV</span>
+                <span class="chip">OCR</span>
+                <span class="chip">RESTAPI</span>
+                <span class="chip">LLMs</span>
+                <span class="chip">Microsoft Power Apps & Power Automate</span>
           </div>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <div class="tl-top"><span class="tl-role">Data Science Associate</span><span class="tl-period">2023 — 2024</span></div>
+          <div class="tl-top"><span class="tl-role">Data Science Intern</span><span class="tl-period">Jun 2025 – Aug 2025</span></div>
           <div class="tl-company">Uber</div>
           <ul>
-            <li>Developed predictive models supporting operational decision-making at scale.</li>
-            <li>Partnered with cross-functional teams to translate ambiguous business problems into measurable ML solutions.</li>
-            <li>Built dashboards and automated reporting to surface insights across markets.</li>
+                  <li>Developed an end-to-end Machine Learning solution to predict traffic congestion levels in Bengaluru using historical Uber ride demand, temporal patterns, and external influencing factors.</li>
+
+                  <li>Collected, cleaned, and integrated large transportation datasets by handling missing values, duplicate records, outliers, and inconsistent data formats to ensure high-quality model inputs.</li>
+
+                  <li>Performed extensive Exploratory Data Analysis (EDA) to identify traffic trends, peak travel hours, ride demand patterns, and the impact of weekdays, weekends, and weather conditions.</li>
+
+                  <li>Engineered meaningful predictive features such as Hour of Day, Day of Week, Peak Hour Indicators, Weekend Flags, and Traffic Density metrics to improve model performance.</li>
+
+                  <li>Built and compared multiple Machine Learning models including Linear Regression, Decision Tree, Random Forest, and Gradient Boosting to identify the most accurate traffic prediction model.</li>
+
+                  <li>Evaluated model performance using industry-standard metrics such as R² Score, Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).</li>
+
+                  <li>Developed scalable data preprocessing and feature engineering pipelines using Python libraries including Pandas, NumPy, and Scikit-learn for efficient model training.</li>
+
+                  <li>Created interactive dashboards and visualizations using Power BI, Matplotlib, and Seaborn to communicate traffic insights, congestion hotspots, and ride demand forecasts to stakeholders.</li>
+
+                  <li>Translated analytical findings into actionable business recommendations to support traffic forecasting, route optimization, and improved operational decision-making for ride-sharing services.</li>
+
+                  <li>Utilized Python, SQL, Machine Learning, Statistical Analysis, Power BI, Git, and Data Visualization techniques throughout the complete Data Science lifecycle, from data acquisition to model evaluation and business reporting.</li>
           </ul>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Scikit-Learn</span><span class="chip">Power BI</span>
-          </div>
+                  <span class="chip">Python</span>
+                  <span class="chip">SQL</span>
+                  <span class="chip">Pandas</span>
+                  <span class="chip">Scikit-Learn</span>
+                  <span class="chip">Power BI</span>
+              </div>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <div class="tl-top"><span class="tl-role">Software Engineer — AI &amp; Automation</span><span class="tl-period">2022 — 2023</span></div>
+          <div class="tl-top"><span class="tl-role">Full Stack Engineer Intern</span><span class="tl-period">Aug 2022 – Oct 2022</span></div>
           <div class="tl-company">Compsoft Technologies</div>
           <ul>
-            <li>Built enterprise automation tools using the Power Platform, reducing manual workflow time significantly.</li>
-            <li>Delivered backend services and REST APIs to support internal ML-driven tools.</li>
-            <li>Collaborated on early computer vision proofs-of-concept for client pilots.</li>
-          </ul>
+                <li>Developed full-stack web applications using <strong>Django</strong> for backend services and <strong>React.js</strong> for building responsive, interactive user interfaces.</li>
+
+                <li>Designed and implemented scalable RESTful APIs using Django REST Framework (DRF) to enable seamless communication between frontend and backend systems.</li>
+
+                <li>Built reusable React components, integrated API endpoints, and implemented state management for dynamic data rendering and improved user experience.</li>
+
+                <li>Designed and optimized relational database schemas, performed CRUD operations, and wrote efficient SQL queries for reliable data management.</li>
+
+                <li>Implemented authentication, authorization, session management, and role-based access control to ensure secure application access.</li>
+
+                <li>Developed backend business logic, data validation, and server-side processing using Python and Django following MVC architecture.</li>
+
+                <li>Integrated third-party APIs and backend services to extend application functionality and automate workflows.</li>
+
+                <li>Collaborated with cross-functional teams using Git for version control, code reviews, debugging, and feature development in an Agile environment.</li>
+
+                <li>Optimized application performance by improving database queries, API response times, and frontend rendering efficiency.</li>
+            </ul>
           <div class="chips">
-            <span class="chip">Django</span><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span>
-          </div>
+              <span class="chip">Django</span>
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">React JS</span>
+              <span class="chip">SQL</span>
+            </div>
         </div>
       </div>
     </div>
@@ -866,7 +1085,6 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
 
 </div>
 
-<!-- ============ MAP ============ -->
 <!-- ============ MAP ============ -->
 <section class="map-section">
 
