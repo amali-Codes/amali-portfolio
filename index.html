@@ -444,7 +444,71 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:20p
   font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:500; color:var(--text); white-space:nowrap;
   border:1.4px solid rgba(17,24,39,.15); padding:10px 18px; border-radius:100px; transition:all .3s ease;
 }
-.pub-link:hover{background:var(--text); color:var(--ivory);}
+.pub-link:hover{
+
+    background:rgba(37,99,235,.08);
+
+    color:var(--royal);
+
+    border-color:var(--royal);
+
+    transform:translateY(-2px);
+
+}
+.pub-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+
+    margin-bottom:16px;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+}
+
+.pub-badge{
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.08);
+
+    color:var(--royal);
+
+    border:1px solid rgba(37,99,235,.18);
+
+    font-weight:600;
+
+    letter-spacing:.02em;
+}
+
+.pub-org{
+    color:var(--emerald);
+}
+
+.pub-feature{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:14px;
+
+    color:#FBBF24;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+}
 
 /* ============ CERTIFICATIONS ============ */
 .cert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
@@ -577,7 +641,6 @@ color:rgba(255,255,255,.72);
 word-break:break-word;
 }
 
-/* ============ MAP ============ */
 /* ============ MAP ============ */
 
 .map-section{
@@ -972,23 +1035,65 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
       <svg class="flourish" viewBox="0 0 150 14"><path d="M2 8 C30 2, 45 14, 70 7 S 120 1, 148 8" stroke="url(#flourGrad3)" stroke-width="2.4" fill="none" stroke-linecap="round"/><defs><linearGradient id="flourGrad3" x1="0" x2="1"><stop offset="0%" stop-color="#10B981"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient></defs></svg>
     </div>
     <div class="pub-grid">
-      <div class="pub-card reveal">
-        <div class="pub-year">2024</div>
-        <div class="pub-info">
-          <h4>Real-Time Object Detection for Retail Shelf Analytics using YOLOv8</h4>
-          <div class="pub-meta">International Conference on AI &amp; Data Engineering</div>
-          <p>Proposes a lightweight YOLOv8-based pipeline for real-time shelf-stock detection, benchmarked for accuracy and inference speed on edge hardware.</p>
-        </div>
-        <a href="#" class="pub-link">View Publication</a>
-      </div>
-      <div class="pub-card reveal reveal-delay-1">
-        <div class="pub-year">2023</div>
-        <div class="pub-info">
-          <h4>A Comparative Study of OCR Techniques for Enterprise Document Automation</h4>
-          <div class="pub-meta">IEEE Conference on Intelligent Systems</div>
-          <p>Evaluates classical and deep-learning OCR approaches for structured document extraction in enterprise automation workflows.</p>
-        </div>
-        <a href="#" class="pub-link">View Publication</a>
+
+  <div class="pub-card reveal">
+
+    <div class="pub-year">
+      2023
+    </div>
+
+    <div class="pub-info">
+      <div class="pub-feature">
+    ⭐ Featured Publication
+</div>
+      <h4>
+        Eyeris: An Aid for Blind Assistance
+      </h4>
+      <div class="pub-meta">
+
+    <span class="pub-badge">Published Research</span>
+
+    <span class="pub-org">
+        RajaRajeswari College of Engineering
+    </span>
+
+</div>
+
+      <p>
+        Published research focused on building an AI-powered assistive system for visually impaired individuals using
+        Computer Vision, YOLO object detection, Face Recognition, Gesture Recognition and Text-to-Speech.
+        The project aims to help users independently identify people, objects and sign language through
+        real-time intelligent vision.
+      </p>
+      <div class="chips">
+
+    <span class="chip">YOLO</span>
+
+    <span class="chip">Computer Vision</span>
+
+    <span class="chip">Deep Learning</span>
+
+    <span class="chip">OpenCV</span>
+
+    <span class="chip">Python</span>
+
+    <span class="chip">Face Recognition</span>
+
+    <span class="chip">Gesture Recognition</span>
+
+</div>
+
+    </div>
+
+    <a href="assets/IOT&AIML.pdf"
+   target="_blank"
+   class="pub-link">
+    Read Paper
+</a>
+
+  </div>
+
+</div>
       </div>
     </div>
   </div>
