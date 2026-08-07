@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Amali Akshaya — AI Engineer</title>
-<meta name="description" content="Amali Akshaya — AI Engineer & Data Science Associate. Building enterprise AI products through Computer Vision, Backend Engineering, Machine Learning and Intelligent Automation." />
+<title>Amali Akshaya — Portfolio</title>
+<meta name="description" content="Amali Akshaya — ML Engineer & Data Science Associate. Building enterprise AI products through Computer Vision, Backend Engineering, Machine Learning and Intelligent Automation." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -511,23 +511,251 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:20p
 }
 
 /* ============ CERTIFICATIONS ============ */
-.cert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:24px;
+}
+
 .cert-card{
-  background:var(--white); border-radius:22px; padding:32px 28px; box-shadow:var(--shadow-card); position:relative; overflow:hidden;
-  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+
+    position:relative;
+
+    background:rgba(255,255,255,.96);
+
+    border:1px solid rgba(37,99,235,.08);
+
+    border-radius:26px;
+
+    padding:34px 30px;
+
+    overflow:hidden;
+
+    box-shadow:0 16px 40px rgba(15,23,42,.08);
+
+    transition:
+        transform .45s var(--ease),
+        box-shadow .45s var(--ease),
+        border-color .45s ease,
+        background .45s ease;
 }
+
 .cert-card::before{
-  content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--grad-cg);
-  transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease);
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #2563EB,
+        #10B981,
+        #FBBF24
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:transform .45s var(--ease);
 }
-.cert-card:hover{transform:translateY(-7px); box-shadow:var(--shadow-soft);}
-.cert-card:hover::before{transform:scaleX(1);}
+
+.cert-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(37,99,235,.18);
+
+    background:#ffffff;
+
+    box-shadow:
+        0 26px 60px rgba(15,23,42,.12);
+}
+
+.cert-card:hover::before{
+    transform:scaleX(1);
+}
+
 .cert-badge{
-  width:50px; height:50px; border-radius:14px; background:var(--grad-cg); display:flex; align-items:center; justify-content:center;
-  margin-bottom:20px; box-shadow:0 10px 20px -10px rgba(251,191,36,.5);
+
+    width:62px;
+    height:62px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.12),
+        rgba(16,185,129,.10),
+        rgba(251,191,36,.12)
+    );
+
+    border:1px solid rgba(37,99,235,.08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
 }
-.cert-card h4{font-size:16.5px; line-height:1.4; margin-bottom:8px;}
-.cert-card .cert-org{font-family:'Space Grotesk',sans-serif; font-size:12.5px; color:var(--text-light); letter-spacing:.02em;}
+
+.cert-card:hover .cert-badge{
+
+    transform:rotate(-6deg) scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.12);
+}
+
+.cert-card h4{
+
+    font-family:'Fraunces',serif;
+
+    font-size:21px;
+
+    font-weight:500;
+
+    line-height:1.45;
+
+    color:var(--text);
+
+    margin-bottom:12px;
+}
+
+.cert-org{
+    display:inline-flex;
+    align-items:center;
+
+    width:fit-content;
+
+    padding:6px 12px;
+
+    margin-bottom:16px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.08);
+
+    color:var(--royal);
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+}
+.cert-date{
+    margin-top:10px;
+    margin-bottom:18px;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    color:var(--text-light);
+}
+
+.cert-skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+}
+
+.cert-chip{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.06),
+        rgba(16,185,129,.05)
+    );
+
+    border:1px solid rgba(37,99,235,.08);
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.03em;
+
+    color:var(--text-light);
+
+    transition:all .35s ease;
+}
+
+.cert-chip:hover{
+    transform:translateY(-2px);
+}
+
+.cert-card:hover .cert-chip{
+    background:linear-gradient(
+        135deg,
+        var(--royal),
+        var(--emerald)
+    );
+
+    color:#fff;
+
+    border-color:transparent;
+}
+.cert-id{
+    margin-top:-10px;
+    margin-bottom:16px;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+    color:#7B8190;
+
+    word-break:break-word;
+}
+
+.cert-footer{
+    margin-top:24px;
+}
+
+.cert-link{
+    display:inline-flex;
+    align-items:center;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    font-weight:600;
+
+    color:var(--royal);
+
+    text-decoration:none;
+
+    transition:all .3s ease;
+}
+.cert-link{
+    gap:6px;
+}
+
+.cert-link:hover{
+    gap:12px;
+    color:var(--emerald);
+}
+
 
 /* ============ SKILLS ============ */
 .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border-radius:26px; overflow:hidden; box-shadow:var(--shadow-card);}
@@ -817,11 +1045,11 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow eyebrow">
-      Building Intelligent Systems • AI Engineer • Bengaluru, India
+      Building Intelligent Systems 
     </div>
     <h1>AMALI<span class="last">Akshaya</span></h1>
     <div class="hero-sub">
-    <b>AI Engineer</b> <b>· Data Science Associate </b>
+    <b>ML Engineer</b> <b>· Data Science Associate </b>
     </div>
     <p class="hero-tag">
     Passionate about building enterprise AI applications using LLMs, Computer Vision, Backend Engineering and Intelligent Automation—transforming complex business problems into scalable, production-ready solutions.
@@ -868,7 +1096,7 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
         <p class="about-lead" style="margin-top:20px;">I build <em>intelligent systems</em> that see, decide, and scale — with the same care I'd give to a piece I wanted to last.</p>
       </div>
       <div class="about-body reveal reveal-delay-1">
-        <p>I'm Amali Akshaya, an AI Engineer and Data Science Associate working at the intersection of computer vision, applied machine learning and backend engineering. I design and ship production-grade AI systems — from object detection pipelines to intelligent automation platforms — for enterprise teams that need reliability, not just prototypes.</p>
+        <p>I'm Amali Akshaya, a ML Engineer and Data Science Associate working at the intersection of computer vision, applied machine learning and backend engineering. I design and ship production-grade AI systems — from object detection pipelines to intelligent automation platforms — for enterprise teams that need reliability, not just prototypes.</p>
         <p>My work spans the full lifecycle: framing the business problem, architecting the ML and backend systems, and delivering measurable impact. I care deeply about craft — clean architecture, thoughtful UX for the humans behind the data, and design that respects the people who use what I build.</p>
         <p>Outside of shipping models, I'm drawn to the discipline of good design — the belief that engineering and taste aren't opposites, but two expressions of the same rigor.</p>
       </div>
@@ -1391,24 +1619,115 @@ overlay.addEventListener('click', (e)=>{ if(e.target===overlay) closeModal(); })
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
 /* ============ DATA: CERTIFICATIONS ============ */
+
 const certs = [
-  {org:'Microsoft & upGrad', name:'Professional Certificate in Artificial Intelligence &amp; Data Science'},
-  {org:'Google Cloud', name:'Gen AI Academy'},
-  {org:'Google Cloud', name:'Vertex AI — Gemini API Skill Badge'},
-  {org:'McKinsey &amp; Company', name:'McKinsey Forward Program'},
-  {org:'Full Stack Development', name:'MERN Full Stack Development'},
-  {org:'Microsoft', name:'Power BI Certification'},
+
+{
+    org: "Skill India • NSDC • upGrad",
+    name: "Data Science & AI (Plus)",
+    issued: "Issued Jun 2026",
+    credential: "u0dah0u81lig2onn",
+    skills: ["AI","Data Science","Gen AI"],
+    link:"https://drive.google.com/file/d/1qYuycoRZlAA-Fl-y3HlR53BRnHa9MmIC/view?usp=sharing"
+
+},
+
+{
+    org: "upGrad Campus",
+    name: "Professional Certificate in AI & Data Science",
+    issued: "Issued Nov 2024",
+    credential: "aad367c1-e737-45ac-a230-0142eebb671c",
+    skills:["Python","Machine Learning","Deep Learning"],
+    link:"https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing"
+},
+
+{
+    org:"McKinsey & Company",
+    name:"McKinsey.org Forward Program",
+    issued:"Issued Dec 2025",
+    credential:"Credly Badge",
+    skills:["Leadership","Problem Solving","Communication"],
+    link:"https://www.credly.com/badges/7c3aba45-829d-406f-b76f-71b836afec77/public_url"
+},
+
+{
+    org:"upGrad Campus",
+    name:"Microsoft + upGrad Certificate",
+    issued:"Issued Aug 2025",
+    credential:"0d80c1c3-2ee8-4ef9-83d6-1648e6c47606",
+    skills:["Microsoft AI","Data Science","Career Essentials"],
+    link:"https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing"
+},
+
+{
+    org:"Google Cloud Skills Boost",
+    name:"Google AI Learning Journey",
+    issued:"2025",
+    credential:"2025H2S04GENAI-A1300145",
+    skills:["Gemini","Vertex AI","Prompt Engineering","RAG"],
+    link:"https://www.credly.com/badges/a4316160-1b8a-4c14-9454-2a59fed2d162/public_url"
+},
+
+{
+    org:"Google",
+    name:"Foundations of Digital Marketing & E-Commerce",
+    issued:"Issued Sep 2022",
+    credential:"Google Career Certificate",
+    skills:["Digital Marketing","E-Commerce"],
+},
+{
+    org:"Ethnus",
+    name:"MERN Full Stack Development",
+    issued:"Issued Mar 2022",
+    credential:"PLWDHXST",
+    skills:["MongoDB","Express","React","Node.js"],
+    link:"https://drive.google.com/file/d/1lRK4zX-aUVJOCHqdJ0rpn4qt_Nh38g52/view?usp=sharing"
+},
+
 ];
 const certGrid = document.getElementById('certGrid');
-certs.forEach((c,i)=>{
-  const el = document.createElement('div');
-  el.className='cert-card reveal' + (i%3===1?' reveal-delay-1':i%3===2?' reveal-delay-2':'');
-  el.innerHTML = `
-    <div class="cert-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.6"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/></svg></div>
-    <h4>${c.name}</h4>
-    <div class="cert-org">${c.org}</div>`;
-  certGrid.appendChild(el);
-  io.observe(el);
+
+certs.forEach((c, i) => {
+
+    const el = document.createElement('div');
+
+    el.className =
+        'cert-card reveal' +
+        (i % 3 === 1
+            ? ' reveal-delay-1'
+            : i % 3 === 2
+            ? ' reveal-delay-2'
+            : '');
+
+    el.innerHTML = `
+        <div class="cert-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.6">
+                <path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/>
+            </svg>
+        </div>
+
+        <h4>${c.name}</h4>
+
+        <div class="cert-org">${c.org}</div>
+
+        <div class="cert-id">
+          Credential ID: ${c.credential}
+      </div>
+
+        <div class="cert-skills">
+        ${c.skills.map(skill => `<span class="cert-chip">${skill}</span>`).join("")}
+    </div>
+    <div class="cert-footer">
+    <a href="${c.link}" class="cert-link" target="_blank">
+        View Credential ↗
+    </a>
+    </div>
+    `;
+
+    certGrid.appendChild(el);
+
+    io.observe(el);
+
 });
 
 /* ============ DATA: SKILLS ============ */
