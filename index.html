@@ -1622,69 +1622,188 @@ document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); }
 
 const certs = [
 
-{
-    org: "Skill India • NSDC • upGrad",
-    name: "Data Science & AI (Plus)",
-    issued: "Issued Jun 2026",
-    credential: "u0dah0u81lig2onn",
-    skills: ["AI","Data Science","Gen AI"],
-    link:"https://drive.google.com/file/d/1qYuycoRZlAA-Fl-y3HlR53BRnHa9MmIC/view?usp=sharing"
+    {
+        org: "Skill India • NSDC • upGrad",
+        name: "Data Science & AI (Plus)",
+        issued: "Issued Jun 2026",
+        credential: "u0dah0u81lig2onn",
+        skills: ["AI", "Data Science", "Gen AI"],
+        link: "https://drive.google.com/file/d/1qYuycoRZlAA-Fl-y3HlR53BRnHa9MmIC/view?usp=sharing",
+        icon: "ai"
+    },
 
-},
+    {
+        org: "upGrad Campus",
+        name: "Professional Certificate in AI & Data Science",
+        issued: "Issued Nov 2024",
+        credential: "aad367c1-e737-45ac-a230-0142eebb671c",
+        skills: ["Python", "Machine Learning", "Deep Learning"],
+        link: "https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing",
+        icon: "data"
+    },
 
-{
-    org: "upGrad Campus",
-    name: "Professional Certificate in AI & Data Science",
-    issued: "Issued Nov 2024",
-    credential: "aad367c1-e737-45ac-a230-0142eebb671c",
-    skills:["Python","Machine Learning","Deep Learning"],
-    link:"https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing"
-},
+    {
+        org: "McKinsey & Company",
+        name: "McKinsey.org Forward Program",
+        issued: "Issued Dec 2025",
+        credential: "Credly Badge",
+        skills: ["Leadership", "Problem Solving", "Communication"],
+        link: "https://www.credly.com/badges/7c3aba45-829d-406f-b76f-71b836afec77/public_url",
+        icon: "mckinsey"
+    },
 
-{
-    org:"McKinsey & Company",
-    name:"McKinsey.org Forward Program",
-    issued:"Issued Dec 2025",
-    credential:"Credly Badge",
-    skills:["Leadership","Problem Solving","Communication"],
-    link:"https://www.credly.com/badges/7c3aba45-829d-406f-b76f-71b836afec77/public_url"
-},
+    {
+        org: "upGrad Campus",
+        name: "Microsoft + upGrad Certificate",
+        issued: "Issued Aug 2025",
+        credential: "0d80c1c3-2ee8-4ef9-83d6-1648e6c47606",
+        skills: ["Microsoft AI", "Data Science", "Career Essentials"],
+        link: "https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing",
+        icon: "microsoft"
+    },
 
-{
-    org:"upGrad Campus",
-    name:"Microsoft + upGrad Certificate",
-    issued:"Issued Aug 2025",
-    credential:"0d80c1c3-2ee8-4ef9-83d6-1648e6c47606",
-    skills:["Microsoft AI","Data Science","Career Essentials"],
-    link:"https://drive.google.com/file/d/1UlcfDosdPz_FvDCBkjuODt0c_tZc1ibh/view?usp=sharing"
-},
+    {
+        org: "Google Cloud Skills Boost",
+        name: "Google AI Learning Journey",
+        issued: "Issued 2025",
+        credential: "2025H2S04GENAI-A1300145",
+        skills: ["Gemini", "Vertex AI", "Prompt Engineering", "RAG"],
+        link: "https://www.credly.com/badges/a4316160-1b8a-4c14-9454-2a59fed2d162/public_url",
+        icon: "google"
+    },
 
-{
-    org:"Google Cloud Skills Boost",
-    name:"Google AI Learning Journey",
-    issued:"2025",
-    credential:"2025H2S04GENAI-A1300145",
-    skills:["Gemini","Vertex AI","Prompt Engineering","RAG"],
-    link:"https://www.credly.com/badges/a4316160-1b8a-4c14-9454-2a59fed2d162/public_url"
-},
+    {
+        org: "Google",
+        name: "Foundations of Digital Marketing & E-Commerce",
+        issued: "Issued Sep 2022",
+        credential: "Google Career Certificate",
+        skills: ["Digital Marketing", "E-Commerce"],
+        icon: "marketing"
+    },
 
-{
-    org:"Google",
-    name:"Foundations of Digital Marketing & E-Commerce",
-    issued:"Issued Sep 2022",
-    credential:"Google Career Certificate",
-    skills:["Digital Marketing","E-Commerce"],
-},
-{
-    org:"Ethnus",
-    name:"MERN Full Stack Development",
-    issued:"Issued Mar 2022",
-    credential:"PLWDHXST",
-    skills:["MongoDB","Express","React","Node.js"],
-    link:"https://drive.google.com/file/d/1lRK4zX-aUVJOCHqdJ0rpn4qt_Nh38g52/view?usp=sharing"
-},
+    {
+        org: "Ethnus",
+        name: "MERN Full Stack Development",
+        issued: "Issued Mar 2022",
+        credential: "PLWDHXST",
+        skills: ["MongoDB", "Express", "React", "Node.js"],
+        link: "https://drive.google.com/file/d/1lRK4zX-aUVJOCHqdJ0rpn4qt_Nh38g52/view?usp=sharing",
+        icon: "mern"
+    }
 
 ];
+
+
+/* ============ CERTIFICATION ICONS ============ */
+
+function certIcon(type) {
+
+    const icons = {
+
+        ai: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M12 3v3"/>
+                <path d="M12 18v3"/>
+                <path d="M3 12h3"/>
+                <path d="M18 12h3"/>
+                <rect x="6" y="6" width="12" height="12" rx="3"/>
+                <circle cx="10" cy="11" r="1"/>
+                <circle cx="14" cy="11" r="1"/>
+                <path d="M9 15h6"/>
+            </svg>
+        `,
+
+        data: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M4 19V5"/>
+                <path d="M4 19h16"/>
+                <rect x="7" y="12" width="3" height="5" rx="1"/>
+                <rect x="12" y="9" width="3" height="8" rx="1"/>
+                <rect x="17" y="6" width="3" height="11" rx="1"/>
+            </svg>
+        `,
+
+        mckinsey: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M5 19V8"/>
+                <path d="M5 8l7-4 7 4"/>
+                <path d="M9 19v-6h6v6"/>
+                <path d="M3 19h18"/>
+            </svg>
+        `,
+
+        microsoft: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6">
+                <rect x="4" y="4" width="7" height="7"/>
+                <rect x="13" y="4" width="7" height="7"/>
+                <rect x="4" y="13" width="7" height="7"/>
+                <rect x="13" y="13" width="7" height="7"/>
+            </svg>
+        `,
+
+        google: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round">
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M12 4v8h8"/>
+            </svg>
+        `,
+
+        marketing: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M4 19V9"/>
+                <path d="M10 19V5"/>
+                <path d="M16 19v-7"/>
+                <path d="M22 19V3"/>
+            </svg>
+        `,
+
+        mern: `
+            <svg viewBox="0 0 24 24" width="24" height="24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M8 5L3 12l5 7"/>
+                <path d="M16 5l5 7-5 7"/>
+                <path d="M14 4l-4 16"/>
+            </svg>
+        `
+    };
+
+    return icons[type] || icons.ai;
+}
+
+
+/* ============ RENDER CERTIFICATIONS ============ */
+
 const certGrid = document.getElementById('certGrid');
 
 certs.forEach((c, i) => {
@@ -1693,35 +1812,53 @@ certs.forEach((c, i) => {
 
     el.className =
         'cert-card reveal' +
-        (i % 3 === 1
-            ? ' reveal-delay-1'
-            : i % 3 === 2
-            ? ' reveal-delay-2'
-            : '');
+        (
+            i % 3 === 1
+                ? ' reveal-delay-1'
+                : i % 3 === 2
+                    ? ' reveal-delay-2'
+                    : ''
+        );
 
     el.innerHTML = `
         <div class="cert-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.6">
-                <path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2z"/>
-            </svg>
+            ${certIcon(c.icon)}
         </div>
 
         <h4>${c.name}</h4>
 
         <div class="cert-org">${c.org}</div>
 
+        <div class="cert-date">
+            ${c.issued}
+        </div>
+
         <div class="cert-id">
-          Credential ID: ${c.credential}
-      </div>
+            Credential ID: ${c.credential}
+        </div>
 
         <div class="cert-skills">
-        ${c.skills.map(skill => `<span class="cert-chip">${skill}</span>`).join("")}
-    </div>
-    <div class="cert-footer">
-    <a href="${c.link}" class="cert-link" target="_blank">
-        View Credential ↗
-    </a>
-    </div>
+            ${c.skills
+                .map(skill => `<span>${skill}</span>`)
+                .join("")}
+        </div>
+
+        ${
+            c.link
+                ? `
+                    <div class="cert-footer">
+                        <a
+                            href="${c.link}"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Credential ↗
+                        </a>
+                    </div>
+                `
+                : ''
+        }
     `;
 
     certGrid.appendChild(el);
@@ -1729,7 +1866,6 @@ certs.forEach((c, i) => {
     io.observe(el);
 
 });
-
 /* ============ DATA: SKILLS ============ */
 const iconPaths = {
   python:'<circle cx="12" cy="12" r="9"/><path d="M8 9h8M8 15h8"/>',
