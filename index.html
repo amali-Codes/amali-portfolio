@@ -1495,6 +1495,46 @@ footer{background:var(--text); border-top:1px solid rgba(255,253,248,.1); paddin
   .contact-links{grid-template-columns:1fr 1fr;}
   .modal{padding:32px 24px;}
   .modal-shots{grid-template-columns:1fr;}
+  /* ============ PROJECT CONFIDENTIALITY NOTICE ============ */
+
+.modal-confidential{
+    margin-top:32px;
+    padding:22px 24px;
+
+    background:rgba(37,99,235,.045);
+
+    border:1px solid rgba(37,99,235,.12);
+
+    border-radius:18px;
+
+    position:relative;
+}
+
+.confidential-title{
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--royal);
+
+    margin-bottom:8px;
+}
+
+.modal-confidential p{
+    margin:0;
+
+    color:var(--text-light);
+
+    font-size:13.5px;
+
+    line-height:1.7;
+}
 }
 
 /* preloader */
@@ -2041,54 +2081,187 @@ const artStyles = [
   'linear-gradient(135deg,#10B981,#FBBF24)'
 ];
 const projects = [
-  {
-    tag:'Computer Vision', title:'ShelfSense — Real-Time Retail Analytics',
-    summary:'A YOLO-powered computer vision system that tracks shelf stock levels in real time across retail stores.',
-    overview:'ShelfSense is an end-to-end computer vision platform that detects product presence and stock-outs on retail shelves from live camera feeds, giving store operations teams real-time visibility without manual audits.',
-    problem:'Retail chains lost significant revenue to undetected stock-outs, with manual shelf audits happening only once or twice a day — far too infrequent to catch fast-moving gaps.',
-    solution:'Designed a real-time detection pipeline using a fine-tuned YOLOv8 model to identify product categories and empty shelf space, feeding results into a live dashboard with automated restock alerts.',
-    architecture:'Edge cameras stream frames to a FastAPI inference service; detections are pushed via a message queue to a Postgres-backed analytics store, visualized through a Power BI dashboard.',
-    stack:['Python','YOLOv8','OpenCV','FastAPI','Docker','PostgreSQL','Power BI'],
-    challenges:'Balancing inference speed against accuracy on constrained edge hardware, and handling occlusion and variable lighting across store environments.',
-    impact:'Reduced stock-out detection time from hours to under 5 minutes, and cut manual audit workload by an estimated 60%.',
-    contribution:'Owned model training and evaluation, built the inference service, and designed the alerting architecture end-to-end.'
-  },
-  {
-    tag:'Intelligent Automation', title:'DocuFlow — Enterprise Document Intelligence',
-    summary:'An OCR and LLM-powered pipeline that extracts, classifies and routes enterprise documents automatically.',
-    overview:'DocuFlow automates the ingestion of unstructured enterprise documents — invoices, contracts, forms — extracting structured data and routing it into downstream business systems.',
-    problem:'Teams spent hours manually keying data from scanned documents into internal systems, creating bottlenecks and error-prone workflows.',
-    solution:'Built a hybrid OCR + LLM pipeline that extracts text, classifies document type, and maps fields into structured JSON using prompt-engineered extraction chains, validated by confidence scoring.',
-    architecture:'Documents are ingested via SharePoint, processed through an OCR + LLM extraction service, validated, and routed via Power Automate into downstream ERP systems.',
-    stack:['Python','OCR','LLMs','Prompt Engineering','Django','Power Automate','SharePoint'],
-    challenges:'Handling messy, inconsistent document layouts and ensuring extraction reliability high enough for low-touch automation.',
-    impact:'Cut average document processing time by 75% and eliminated a majority of manual data-entry errors.',
-    contribution:'Designed the extraction architecture, engineered the prompting strategy, and integrated the pipeline into existing enterprise workflows.'
-  },
-  {
-    tag:'Machine Learning', title:'RouteIQ — Predictive Operations Engine',
-    summary:'A predictive ML system supporting operational decision-making with demand and routing forecasts.',
-    overview:'RouteIQ forecasts demand patterns and operational bottlenecks, giving operations teams a predictive edge for resource planning.',
-    problem:'Operational planning relied on lagging historical reports, leading to reactive rather than proactive resourcing decisions.',
-    solution:'Developed ensemble forecasting models combining time-series and gradient-boosted approaches, deployed behind a REST API consumed by internal planning tools.',
-    architecture:'A scheduled training pipeline retrains models on fresh data; a FastAPI service serves predictions to internal dashboards and planning tools.',
-    stack:['Python','Scikit-Learn','SQL','FastAPI','Power BI'],
-    challenges:'Managing model drift across seasonal demand shifts and ensuring forecasts stayed interpretable for non-technical stakeholders.',
-    impact:'Improved forecast accuracy by double digits over baseline heuristics, informing smarter resource allocation.',
-    contribution:'Led feature engineering, model selection and evaluation, and built the internal-facing prediction API.'
-  },
-  {
-    tag:'Backend & Platform', title:'Automate Studio — Low-Code AI Workflows',
-    summary:'A Power Platform-based automation suite connecting AI services to everyday enterprise workflows.',
-    overview:'Automate Studio lets non-technical teams trigger AI-powered actions — classification, extraction, summarization — inside existing business tools without writing code.',
-    problem:'AI capabilities existed but were locked behind engineering teams, creating a bottleneck for business users who needed quick automation wins.',
-    solution:'Built reusable Power Apps and Power Automate components that call backend AI microservices, giving business teams a low-code interface to AI functionality.',
-    architecture:'Power Apps front-end triggers Power Automate flows, which call FastAPI-hosted AI microservices and write results back into SharePoint and Dataverse.',
-    stack:['Power Apps','Power Automate','SharePoint','FastAPI','REST APIs'],
-    challenges:'Designing microservice contracts flexible enough for varied low-code use cases without overloading business users with complexity.',
-    impact:'Enabled 5+ business teams to self-serve AI automation, reducing engineering backlog for small automation requests.',
-    contribution:'Architected the microservice layer and designed the low-code integration patterns adopted across teams.'
-  }
+   {
+    tag: 'Enterprise UI & Automation',
+
+    title: 'New Frontier Library (NFL)',
+
+    summary:
+        'A responsive Power Apps interface designed to provide a seamless client experience over SharePoint-backed innovation data.',
+
+    overview:
+        'New Frontier Library (NFL) is an enterprise application built to provide a more streamlined and user-friendly experience for interacting with innovation library data. I worked on the frontend experience and workflow integration, focusing on responsiveness, usability, and consistent interaction across devices.',
+
+    problem:
+        'The existing SharePoint-based experience required a more intuitive interface for client users. The goal was to provide a cleaner application experience while retaining the underlying SharePoint data and business workflows.',
+
+    solution:
+        'Designed and developed the frontend experience in Power Apps, replicating relevant SharePoint views within a more streamlined interface. I focused on responsive layouts, navigation, data presentation, and user interactions to make the application easier to use across desktop and mobile devices.',
+
+    architecture:
+        'The application uses Power Apps as the user-facing layer, SharePoint as the underlying data source, and Power Automate to support workflow-driven interactions and business processes.',
+
+    stack: [
+        'Power Apps',
+        'Power Automate',
+        'SharePoint',
+        'Responsive UI'
+    ],
+
+    challenges:
+        'Creating a responsive experience across different screen sizes while maintaining consistent layouts, data presentation, and interactions with SharePoint-backed information.',
+
+    impact:
+        'Created a more streamlined client-facing experience by bringing SharePoint-based views and workflow interactions into a responsive Power Apps interface.',
+
+    contribution:
+        'Owned the frontend implementation, responsive UI development, SharePoint view replication, and Power Automate workflow integration for the application.',
+
+    confidential: true
+    },
+    {
+    tag: 'Computer Vision',
+    title: 'Computer Vision Inspection Suite',
+
+    summary:
+        'YOLO-based inspection systems for product quality, component verification, and tea-leaf classification across real-world industrial use cases.',
+
+    overview:
+        'Developed and evaluated YOLO-based computer vision solutions for multiple inspection and classification problems, working with custom image datasets, annotation workflows, model training, and object-detection inference.',
+
+    problem:
+        'Manual visual inspection can be inconsistent and time-consuming when products contain multiple components or when visual characteristics determine quality classification. The objective was to use computer vision to identify relevant objects and provide a more consistent inspection process.',
+
+    solution:
+        'Built custom YOLO-based object detection workflows for three different use cases: Himalayan packaged-water bottle inspection, Crompton product-box component verification, and Tata Tea leaf classification. The workflows involved dataset preparation, image annotation, model training, evaluation, and inference.',
+
+    architecture:
+        'Images were collected and prepared for the respective use cases, annotated with relevant object classes, and used to train YOLO models. The trained models were then evaluated on unseen images to identify and classify the required objects.',
+
+    stack: [
+        'Python',
+        'YOLOv8',
+        'OpenCV',
+        'Computer Vision',
+        'Image Annotation',
+        'Google Colab',
+        'Roboflow'
+    ],
+
+    challenges:
+        'The main challenges involved creating consistent annotations, handling differences in object appearance and orientation, and ensuring that the models could distinguish visually similar objects across different real-world conditions.',
+
+    impact:
+        'The resulting computer vision workflows supported automated visual inspection and helped reduce dependence on manual verification for product and quality-related checks.',
+
+    contribution:
+        'Worked across dataset preparation, image annotation, YOLO model training, evaluation, and inspection logic for the different computer vision use cases.',
+
+    confidential: true,
+
+    useCases: [
+        {
+            title: 'Himalayan Water Bottle Inspection',
+
+            description:
+                'Developed an object-detection workflow to inspect packaged water bottles and identify whether the bottle cap was properly sealed or unsealed.'
+        },
+
+        {
+            title: 'Crompton Product Box Verification',
+
+            description:
+                'Built a computer vision inspection workflow to identify whether required components such as the canopy, shackle, box, and down rod were present inside a product package. The objective was to reduce missing-component complaints and support faster verification when a customer reports an issue.'
+        },
+
+        {
+            title: 'Tata Tea Leaf Classification',
+
+            description:
+                'Worked on tea-leaf image annotation and classification based on visual characteristics. Mature leaves were categorized toward coarse tea powder, while fresh leaves and buds were associated with fine tea powder classification.'
+        }
+    ]
+        },
+{
+    tag: 'Machine Learning',
+    title: 'Traffic Prediction — Uber Bengaluru',
+
+    summary:
+        'A machine learning project focused on predicting traffic patterns in Bengaluru using historical mobility and time-based data.',
+
+    overview:
+        'Developed a machine learning pipeline to analyze Bengaluru traffic patterns and predict traffic conditions using historical data. The project focused on exploratory data analysis, feature engineering, model development, and evaluation.',
+
+    problem:
+        'Traffic conditions in Bengaluru vary significantly based on time, location, day of the week, and other contextual factors. Understanding these patterns can help anticipate congestion and support better planning of routes and resources.',
+
+    solution:
+        'Prepared and explored historical traffic data, identified important temporal and traffic-related patterns, engineered predictive features, and trained machine learning models to estimate traffic conditions.',
+
+    architecture:
+        'The workflow follows a data-science pipeline: data preparation → exploratory data analysis → feature engineering → model training → model evaluation → prediction.',
+
+    stack: [
+        'Python',
+        'Pandas',
+        'NumPy',
+        'Scikit-Learn',
+        'Matplotlib',
+        'Seaborn',
+        'Jupyter'
+    ],
+
+    challenges:
+        'Traffic data contains strong temporal patterns and variations in congestion. Handling these patterns while selecting meaningful predictive features and avoiding unnecessary noise was an important part of the modelling process.',
+
+    impact:
+        'Demonstrated the ability to take a real-world urban mobility problem from raw data and exploratory analysis through feature engineering, machine learning, and model evaluation.',
+
+    contribution:
+        'Handled data preparation, exploratory data analysis, feature engineering, model development, evaluation, and interpretation of the resulting predictions.',
+
+    confidential: false
+} ,      
+{
+    tag: 'Applied AI',
+    title: 'Crompton — AI Product Matching & Visual Intelligence',
+
+    summary:
+        'Applied AI workflows combining product image generation, visual understanding, and intelligent product matching for tender and product workflows.',
+
+    overview:
+        'Worked on an applied AI solution for Crompton focused on improving how product information and visual assets could be generated, interpreted, and matched against tender requirements.',
+
+    problem:
+        'Tender and product workflows can involve large amounts of product information that must be interpreted and matched accurately. Manual comparison can be repetitive and time-consuming, while product visuals may also need to be generated or standardized for downstream use.',
+
+    solution:
+        'Developed AI-assisted workflows for product matching and visual content generation. The solution combined product information with AI-based interpretation to identify relevant product matches and support faster handling of tender-related requirements.',
+
+    architecture:
+        'The workflow combines structured product information with AI processing for requirement interpretation, product matching, and visual generation. Outputs can then be reviewed and used by downstream business workflows.',
+
+    stack: [
+        'Python',
+        'LLMs',
+        'Generative AI',
+        'Prompt Engineering',
+        'Computer Vision',
+        'Image Generation',
+        'AI Agents'
+    ],
+
+    challenges:
+        'The key challenge was making AI-generated outputs useful for real business workflows while maintaining consistency, relevance, and accuracy when matching product requirements against available product information.',
+
+    impact:
+        'Demonstrated how generative AI and intelligent matching can reduce repetitive manual effort in product and tender-related workflows while improving the speed of information discovery.',
+
+    contribution:
+        'Worked on the AI workflow design, prompt engineering, product-matching logic, and image-generation workflow while considering how the solution could fit into existing business processes.',
+
+    confidential: true
+}
 ];
 
 /* ============ PROJECT CARDS ============ */
@@ -2184,11 +2357,11 @@ projects.forEach((p, i) => {
 const overlay = document.getElementById('modalOverlay');
 const modalContent = document.getElementById('modalContent');
 
-
 function openModal(project, art) {
 
     modalContent.innerHTML = `
 
+        <!-- Close Button -->
         <button
             class="modal-close"
             id="modalClose"
@@ -2197,6 +2370,7 @@ function openModal(project, art) {
         </button>
 
 
+        <!-- Project Hero -->
         <div
             class="modal-hero"
             style="background:${art};">
@@ -2208,10 +2382,8 @@ function openModal(project, art) {
         </div>
 
 
-        <h3>
-            ${project.title}
-        </h3>
-
+        <!-- Project Title -->
+        <h3>${project.title}</h3>
 
         <div class="modal-sub">
             ${project.tag}
@@ -2219,7 +2391,6 @@ function openModal(project, art) {
 
 
         <!-- Overview -->
-
         <div class="modal-section">
 
             <h4>Overview</h4>
@@ -2232,7 +2403,6 @@ function openModal(project, art) {
 
 
         <!-- Business Problem -->
-
         <div class="modal-section">
 
             <h4>Business Problem</h4>
@@ -2245,7 +2415,6 @@ function openModal(project, art) {
 
 
         <!-- Solution -->
-
         <div class="modal-section">
 
             <h4>Solution</h4>
@@ -2255,23 +2424,36 @@ function openModal(project, art) {
             </p>
 
         </div>
+        ${project.useCases ? `
+    <div class="modal-section">
 
+        <h4>Computer Vision Use Cases</h4>
 
-        <!-- Architecture -->
+        <div class="project-usecases">
 
+            ${project.useCases.map(useCase => `
+                <div class="usecase-card">
+
+                    <h5>${useCase.title}</h5>
+
+                    <p>${useCase.description}</p>
+
+                </div>
+            `).join('')}
+
+        </div>
+
+    </div>
+` : ''}
+
+        <!-- My Contribution -->
         <div class="modal-section">
-
-            <h4>Architecture</h4>
-
-            <p>
-                ${project.architecture}
-            </p>
-
+            <h4>My Contribution</h4>
+            <p>${project.contribution}</p>
         </div>
 
 
         <!-- Technology Stack -->
-
         <div class="modal-section">
 
             <h4>Technology Stack</h4>
@@ -2286,7 +2468,6 @@ function openModal(project, art) {
 
 
         <!-- Challenges -->
-
         <div class="modal-section">
 
             <h4>Challenges</h4>
@@ -2299,7 +2480,6 @@ function openModal(project, art) {
 
 
         <!-- Business Impact -->
-
         <div class="modal-section">
 
             <h4>Business Impact</h4>
@@ -2311,25 +2491,39 @@ function openModal(project, art) {
         </div>
 
 
-        <!-- My Contribution -->
+        <!-- Confidentiality Notice -->
+        ${
+            project.confidential
+            ? `
+                <div class="modal-confidential">
 
-        <div class="modal-section">
+                    <div class="confidential-title">
+                        Client Project
+                    </div>
 
-            <h4>My Contribution</h4>
+                    <p>
+                        This project was developed as part of a
+                        client engagement. Source code, screenshots,
+                        and proprietary implementation details are
+                        not publicly available due to confidentiality.
+                    </p>
 
-            <p>
-                ${project.contribution}
-            </p>
-
-        </div>
+                </div>
+            `
+            : ''
+        }
 
     `;
 
+
+    /* Open Modal */
 
     overlay.classList.add('active');
 
     document.body.style.overflow = 'hidden';
 
+
+    /* Close Button */
 
     const closeButton =
         document.getElementById('modalClose');
@@ -2338,6 +2532,7 @@ function openModal(project, art) {
         'click',
         closeModal
     );
+
 }
 
 
@@ -2352,7 +2547,7 @@ function closeModal() {
 }
 
 
-/* Close when clicking outside modal */
+/* ============ CLOSE ON OUTSIDE CLICK ============ */
 
 overlay.addEventListener('click', (event) => {
 
@@ -2363,7 +2558,7 @@ overlay.addEventListener('click', (event) => {
 });
 
 
-/* Close with Escape */
+/* ============ CLOSE WITH ESCAPE ============ */
 
 document.addEventListener('keydown', (event) => {
 
@@ -2372,8 +2567,6 @@ document.addEventListener('keydown', (event) => {
     }
 
 });
-
-
 /* ============ DATA: CERTIFICATIONS ============ */
 
 const certs = [
